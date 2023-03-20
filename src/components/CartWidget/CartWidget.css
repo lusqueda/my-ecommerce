@@ -1,0 +1,10 @@
+.CartWidget {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+}
+
+.CartWidget span {
+    color: "white";
+}
