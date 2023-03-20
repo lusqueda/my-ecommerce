@@ -1,0 +1,14 @@
+.ItemListContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgb(255, 255, 255);
+	width: 100%;
+	min-height: 30vh;
+	border: 10px solid rgb(179, 179, 177);
+}
+
+.ItemListContainer h1{
+	color: rgb(97, 45, 45);
+}
