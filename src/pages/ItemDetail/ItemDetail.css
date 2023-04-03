@@ -1,0 +1,16 @@
+.ItemDetail {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.DescDetail {
+    width: 30%;
+}
+
+.DetailImg {
+	width: 20%;
+	height: 20%;
+	border-radius: 25px;
+}
+

@@ -3,17 +3,35 @@
 	background: rgba(230, 229, 229, 0.521);
 	height: 8vh;
 	width: 100%;
-  }
+}
   
-  ul {
+ul {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	width: 100%;
 	list-style: none;
-  }
+}
 
 a {
     color: #000000;
 	text-decoration: none;
   }
+
+li {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}  
+
+.NavImg {
+	width: 35px;
+	height: 35px;
+	border-radius: 25px;
+  }
+
+.Link {
+	color: black;
+	list-style: none;
+	font-size: 20px;
+}

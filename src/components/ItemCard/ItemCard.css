@@ -1,0 +1,6 @@
+.ItemCard {
+    max-width: 400px;
+    max-height: 800px;
+    margin: 5vh 5vh 0 5vh;
+    border: 2px solid rgb(179, 179, 177) ;
+}

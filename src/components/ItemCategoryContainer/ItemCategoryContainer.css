@@ -1,14 +1,15 @@
-.ItemListContainer {
+.ItemCategoryContainer {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 8vh;
 	background-color: rgb(255, 255, 255);
-	width: 99%;
+	width: 94.1%;
 	min-height: 30vh;
 	border: 10px solid rgb(179, 179, 177);
+	padding: 5vh;
 }
 
-.ItemListContainer h1{
+.ItemCategoryContainer h1{
 	color: rgb(97, 45, 45);
 }
