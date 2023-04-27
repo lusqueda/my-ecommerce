@@ -1,19 +1,40 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./ItemListContainer.css";
 import { Link } from "react-router-dom";
-
+import {
+  collection,
+  query,
+  getDocs,
+  where,
+} from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 import ItemCard from "../ItemCard/ItemCard";
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
 
   const [data, setData] = useState({});
 
+  let category = props.category;
+
   useEffect(() => {
-      axios(`https://fakestoreapi.com/products`).then((res) =>
-      setData(res.data));
-  }, []);
- 
+    
+    const getProducts = async () => {
+     let q = [];
+     if(category){
+         q = query(collection(db, "products"), where("category", "==", category));
+      }else{
+         q = query(collection(db, "products"));
+      }
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setData(docs);
+    };
+    getProducts();
+
+  }, [category]);
 
   return (
     <div className="ItemListContainer">

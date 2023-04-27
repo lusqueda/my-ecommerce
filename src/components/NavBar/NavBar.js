@@ -3,29 +3,29 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import img from "./logo.jpg";
 
-
 import CartWidget from "../CartWidget/CartWidget";
 
-const NavBar = () => {
+const NavBar = (props) => {
+
   return (
     <nav className="Navigation">
       <ul>
-        <Link className="Link" to="/">
+        <Link className="Link" to="/home">
           <img className="NavImg" src={img} alt="logo" />
         </Link>
         <Link className="Link" to="/home">
             Home
         </Link>
-        <Link className="Link" to={`/category/${'electronics'}`}>
+        <Link className="Link" to={`/home/${'electronics'}`}>
             Electronics
         </Link>
-        <Link className="Link" to={`/category/${'jewelery'}`}>
+        <Link className="Link" to={`/home/${'jewelery'}`}>
             Jewelery
         </Link>
-        <Link className="Link" to={`/category/${"men's clothing"}`}>
+        <Link className="Link" to={`/home/${"men's clothing"}`}>
             Men's clothing
         </Link>
-        <Link className="Link" to={`/category/${"women's clothing"}`}>
+        <Link className="Link" to={`/home/${"women's clothing"}`}>
             Women's clothing
         </Link>
         <Link className="Link" to="/contact">
@@ -34,9 +34,9 @@ const NavBar = () => {
         <Link className="Link" to="/about">
             About
         </Link>
-        <li>
-          <CartWidget />
-        </li>
+        <Link className="Link" to="/cart">
+          <CartWidget count = {props.count}/>
+        </Link>
       </ul>
     </nav>
   );
