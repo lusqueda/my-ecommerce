@@ -1,14 +1,28 @@
 import React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import "./CartWidget.css";
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const CartWidget = () => {
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
+
+const CartWidget = (props) => {
+
   return (
-    <div className="CartWidget">
-      <AddShoppingCartIcon sx={{ color: "black" }} />
-      <span>1</span>
-    </div>
+    <IconButton aria-label="cart">
+      <StyledBadge badgeContent={props.count} color="secondary">
+        <ShoppingCartIcon /> 
+      </StyledBadge> 
+    </IconButton>
   );
-};
+}
 
 export default CartWidget;

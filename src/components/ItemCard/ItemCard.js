@@ -13,7 +13,7 @@ const ItemCard = ({
   price,
 }) => {
   return (
-    <Card className="ItemCard" sx={{background: backgroundColor }}>
+    <Card className="ItemCard" sx={{background: backgroundColor, marginBottom:"3vh", marginTop: "3vh"}}>
       <CardActionArea>
         <CardMedia component="img" sx={{ height: 300 }} image={img} alt="Item" />
         <CardContent>
