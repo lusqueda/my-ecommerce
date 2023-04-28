@@ -44,8 +44,6 @@ const Orders = () => {
     
     }, []);
     
-
-    console.log(data);
   return (
     <div className="Orders">
       <h1>ORDERS</h1>
