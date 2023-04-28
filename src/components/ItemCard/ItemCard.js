@@ -1,10 +1,11 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import "./ItemCard.css";
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
 
 const ItemCard = ({
   img,
@@ -14,16 +15,23 @@ const ItemCard = ({
 }) => {
   return (
     <Card className="ItemCard" sx={{background: backgroundColor, marginBottom:"3vh", marginTop: "3vh"}}>
-      <CardActionArea>
-        <CardMedia component="img" sx={{ height: 300 }} image={img} alt="Item" />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {title}
-          </Typography>
-          <div>{price}$</div>
-        </CardContent>
+      <CardActionArea sx={{ width: 300 }}>
+        <CardMedia component="img" image={img} alt="Item" />
+          <ImageListItemBar
+              title={title}
+              subtitle={price}
+              actionIcon={
+                <IconButton
+                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                  aria-label={`info about ${title}`}
+                >
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
       </CardActionArea>
     </Card>
+
   );
 };
 export default ItemCard;

@@ -2,7 +2,9 @@
 	display: flex;
 	background: rgba(230, 229, 229, 0.521);
 	height: 8vh;
-	width: 100%;
+	width: 99%;
 	align-items:center;
 	justify-content:center;
+	border: 10px solid rgb(179, 179, 177);
+	border-radius: 25px;
   }
