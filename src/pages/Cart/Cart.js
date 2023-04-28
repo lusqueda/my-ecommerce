@@ -38,7 +38,6 @@ function PaperComponent(props) {
 }
 
 const formSchema = yup.object({
-
   name: yup.string().min(3,'La cantidad minima de caracteres es 3').max(70).required('El Campo Nombres no puede ser vacio'),
   lastname: yup.string().min(3,'La cantidad minima de caracteres es 3').max(70).required('El Campo Apellidos no puede ser vacio'),
   street: yup.string().min(3,'La cantidad minima de caracteres es 3').max(100).required('El Campo Direccion no puede ser vacio'),
@@ -86,11 +85,11 @@ const Cart = () => {
     
 
     return (
-    <div>
-      <h1>Carrito de Compras</h1>
+    <div style={{border: '10px solid rgb(179, 179, 177)', width: '99%', borderRadius: '25px', padding: 20 }}>
+      <h1>CART</h1>
       <Paper
       sx={{
-        p: 2,
+        p: 4,
         margin: 'auto',
         maxWidth: 500,
         flexDirection: 'column',
@@ -111,7 +110,8 @@ const Cart = () => {
         <CartTotals items = {itemsCart(cart)} amount = {amountCart(cart)}  />
       : null}
 
-      {purchaseID.length ? <Stack sx={{ width: '100%' }} spacing={2}>
+      {purchaseID.length ? 
+        <Stack sx={{ width: '100%' }} spacing={2}>
           <Alert variant="filled" severity="success">
             Se realizo la compra con exito — Pedido ID: {purchaseID}
           </Alert>

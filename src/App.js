@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container'
 
 // COMPONENTS
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 
 // PAGES
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
+import Orders from "./pages/Orders/Orders";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 
 //CONTEXT
@@ -28,27 +30,28 @@ const  App = () => {
   
    return (  
     <div className="App">
-      <Router>  
-          <Header
-            title="e-Commerce"
-            subTitle="Multi Brand"
-          />
-          <NavBar count = {total}/>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/home/:category" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/item-detail/:id" element={<ItemDetail />} />
-          </Routes>
-          <Footer />
-      </Router>
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth='xl'sx={{pt:3, pb:3, borderRadius: '25px'}} fixed disableGutters >
+          <Router>  
+            <NavBar count = {total}/>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/home/:category" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/item-detail/:id" element={<ItemDetail />} />
+            </Routes>
+            <Footer />
+        </Router>
+        </Container>
+      </React.Fragment>
     </div>
  
    );
 }
-
 
 export default App;

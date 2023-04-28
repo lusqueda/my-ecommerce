@@ -34,6 +34,9 @@ const NavBar = (props) => {
         <Link className="Link" to="/about">
             About
         </Link>
+        <Link className="Link" to="/orders">
+            Orders
+        </Link>
         <Link className="Link" to="/cart">
           <CartWidget count = {props.count}/>
         </Link>

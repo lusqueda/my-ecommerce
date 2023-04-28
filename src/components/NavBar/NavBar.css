@@ -2,7 +2,9 @@
 	display: flex;
 	background: rgba(230, 229, 229, 0.521);
 	height: 8vh;
-	width: 100%;
+	width: 99%;
+	border: 10px solid rgb(179, 179, 177);
+	border-radius: 25px;
 }
   
 ul {
@@ -25,8 +27,8 @@ li {
 }  
 
 .NavImg {
-	width: 35px;
-	height: 35px;
+	width: 45px;
+	height: 45px;
 	border-radius: 25px;
   }
 
@@ -35,3 +37,4 @@ li {
 	list-style: none;
 	font-size: 20px;
 }
+
